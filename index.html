@@ -876,7 +876,7 @@ IMPORTANT COMPLIANCE & SAFETY GUIDELINES:
         // ==================== GEMINI API INTEGRATION ====================
         async function fetchGeminiResponse(userPrompt, extraSystemPrompt = "") {
             const apiKey = ""; // Canvas runtime injection
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            const apiUrl = "process.env['GEMINI_API_KEY'`;
 
             const activeLangInstruction = `\nActive Selected UI Language: ${state.lang.toUpperCase()} (${state.lang === 'am' ? 'AMHARIC' : 'ENGLISH'}). You MUST respond in ${state.lang === 'am' ? 'AMHARIC' : 'ENGLISH'}.`;
             const fullSystemInstruction = MEDICAL_SYSTEM_INSTRUCTION + activeLangInstruction + "\n" + extraSystemPrompt;
